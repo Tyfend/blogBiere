@@ -1,5 +1,6 @@
 <?php
 require_once '/var/www/vendor/autoload.php';
+require_once 'donnees.php';
 
 $pdo = new PDO('mysql:host=blog.mysql;dbname=blog', 'userblog', 'blogpwd');
 
@@ -22,10 +23,17 @@ $etape = $pdo->exec("CREATE TABLE category(
         )");
 echo "||";
 $etape = $pdo->exec("CREATE TABLE user(
-            id INT UNSIGNED NOT NULL AUTO_INCREMENT,
-            username VARCHAR(255) NOT NULL,
+            userId INT UNSIGNED NOT NULL AUTO_INCREMENT,
+            userLastName VARCHAR(255) NOT NULL,
+            userFirstName VARCHAR(255) NOT NULL,
+            userAddress VARCHAR(255) NOT NULL,
+            userZipcode VARCHAR(255) NOT NULL,
+            userCity VARCHAR(255) NOT NULL,
+            userCountry VARCHAR(255) NOT NULL,
+            userPhone VARCHAR(255) NOT NULL,
+            userEmail VARCHAR(255) NOT NULL,
             password VARCHAR(255) NOT NULL,
-            PRIMARY KEY(id)
+            PRIMARY KEY(UserId)
         )");
 echo "||";
 $pdo->exec("CREATE TABLE post_category(
@@ -44,13 +52,22 @@ $pdo->exec("CREATE TABLE post_category(
                 ON UPDATE RESTRICT
         )");
 echo "||";
-
+$etape = $pdo->exec("CREATE TABLE beer(
+            id INT(11) NOT NULL AUTO_INCREMENT,
+            title VARCHAR(255) NOT NULL,
+            img text NOT NULL,
+            content longtext NOT NULL,
+            price float NOT NULL,
+            PRIMARY KEY(id)
+)");
+echo "||";
 
 //vidage table
 $pdo->exec('SET FOREIGN_KEY_CHECKS = 0');
 $pdo->exec('TRUNCATE TABLE post_category');
 $pdo->exec('TRUNCATE TABLE post');
 $pdo->exec('TRUNCATE TABLE user');
+$pdo->exec('TRUNCATE TABLE beers');
 $pdo->exec('TRUNCATE TABLE category');
 $pdo->exec('SET FOREIGN_KEY_CHECKS = 1');
 echo "||||||||||||";
@@ -91,6 +108,36 @@ $password = password_hash('admin', PASSWORD_BCRYPT);
 echo "||";
 
 $pdo->exec("INSERT INTO user SET
-        username='admin',
+        userLastName='admin',
+        userFirstName='admin',
+        userAddress='a',
+        userZipcode='b',
+        userCity='Montluçon',
+        userCountry='France',
+        userPhone='c',
+        userEmail='d',
         password='{$password}'");
 echo "||]";
+
+
+if(!file_exists('lock.php')){
+	$sql = "INSERT INTO
+			`beer` (`title`, `img`, `content`, `price`)
+			VALUES (:title, :img, :content, :price)";
+
+	$statement = $pdo->prepare($sql);
+	foreach ($beerArray as $value) {
+		$statement->execute([
+		':title'	=> $value[0],
+		':img'		=> $value[1],
+		':content'	=> $value[2],
+		':price'	=> $value[3]
+	]);
+    }
+    
+	//cree fichier ressources/lock.php
+	fopen('lock.php', 'w');
+	echo "données insérées";
+}else{
+	echo "aucune modification";
+}

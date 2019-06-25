@@ -21,7 +21,7 @@ docker exec blog php commande/createsql.php
 echo
 echo "#-----------------------------------------------------------"
 echo "#"
-echo "# Please check your browser to see if it is running, use your"
+echo "# Démarrage OK"
 echo "#"
 echo "#-----------------------------------------------------------"
 echo
