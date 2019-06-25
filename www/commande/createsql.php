@@ -120,24 +120,18 @@ $pdo->exec("INSERT INTO user SET
 echo "||]";
 
 
-if(!file_exists('lock.php')){
-	$sql = "INSERT INTO
-			`beer` (`title`, `img`, `content`, `price`)
-			VALUES (:title, :img, :content, :price)";
 
-	$statement = $pdo->prepare($sql);
-	foreach ($beerArray as $value) {
-		$statement->execute([
-		':title'	=> $value[0],
-		':img'		=> $value[1],
-		':content'	=> $value[2],
-		':price'	=> $value[3]
-	]);
-    }
-    
-	//cree fichier ressources/lock.php
-	fopen('lock.php', 'w');
-	echo "données insérées";
-}else{
-	echo "aucune modification";
+$sql = "INSERT INTO
+	`beer` (`title`, `img`, `content`, `price`)
+	VALUES (:title, :img, :content, :price)";
+$statement = $pdo->prepare($sql);
+foreach ($beerArray as $value) {
+	$statement->execute([
+	':title'	=> $value[0],
+	':img'		=> $value[1],
+	':content'	=> $value[2],
+	':price'	=> $value[3]
+]);
 }
+
+echo "données insérées";
