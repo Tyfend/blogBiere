@@ -1,3 +1,26 @@
-#jumbotron {
-    background: black;
+/* HOMEPAGE ARTICLE */
+.sectionHome h2 {
+    font-size: 2.5vw; 
+    text-align: center;
 }
+.sectionHome article {
+    display: flex;
+    flex-direction: row !important;
+    width: 80% !important;
+    margin: 5% 0; 
+    margin-left: 10%;
+}
+.sectionHome article div {
+      width: 30%; 
+}
+.sectionHome article div img {
+        width: 100%;
+        margin: 0;
+}
+.sectionHome article p {
+      margin-left: 3% !important;
+      width: 50% !important; 
+      font-size: 12px;
+      text-align: justify;
+}
+
