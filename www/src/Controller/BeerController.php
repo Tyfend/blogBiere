@@ -20,7 +20,6 @@ class BeerController extends Controller
             $this->beer,
             $this->generateUrl('shop')
         );
-        
         $beers = $paginatedQuery->getItems();
         $title = "Nos Bières";
 

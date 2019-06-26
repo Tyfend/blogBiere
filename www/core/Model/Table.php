@@ -20,7 +20,8 @@ class Table
             $this->table = strtolower(str_replace('Table', '', $class_name));
         }
     }
-
+    
+    
     public function count()
     {
         return $this->query("SELECT COUNT(id) as nbrow FROM {$this->table}", null, true, null);
