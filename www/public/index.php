@@ -8,7 +8,8 @@ $app->setStartTime();
 $app::load();
 
 $app->getRouter($basePath)
-    ->get('/', 'Post#all', 'home')
+    ->get('/', 'Home#all', 'home')
+    ->get('/blog', 'Post#all', 'blog')
     ->get('/categories', 'Category#all', 'categories')
     ->get('/shop', 'Beer#all', 'shop')
     ->get('/category/[*:slug]-[i:id]', 'Category#show', 'category')
