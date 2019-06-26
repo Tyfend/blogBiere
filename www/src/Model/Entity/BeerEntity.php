@@ -30,6 +30,11 @@ class BeerEntity extends Entity
         return $this->img;
     }
 
+    public function getPrice(): string
+    {
+        return $this->price;
+    }
+
     public function getContent(): string
     {
         return $this->content;
@@ -40,7 +45,7 @@ class BeerEntity extends Entity
         return \App\App::getInstance()
             ->getRouter()
             ->url('shop', [
-                "slug" => $this->getSlug(),
+                "title" => $this->getTitle(),
                 "id" => $this->getId()
             ]);
     }
