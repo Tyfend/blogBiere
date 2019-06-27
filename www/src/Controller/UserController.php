@@ -14,7 +14,7 @@ class UserController extends Controller
 
 
     public function inscription(){
-        $title = "INSCRIPTION";
+        $title = "";
 
         $this->render(
             "user/register",
@@ -27,7 +27,7 @@ class UserController extends Controller
     }
 
     public function connection(){
-        $title = "CONNECTION";
+        $title = "";
 
         $this->render(
             "user/connexion",
@@ -39,7 +39,7 @@ class UserController extends Controller
     }
 
     public function profil(){
-        $title = "PROFIL";
+        $title = "";
 
         $this->render(
             "user/profil",
