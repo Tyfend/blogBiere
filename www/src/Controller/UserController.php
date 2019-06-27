@@ -12,54 +12,50 @@ class UserController extends Controller
         $this->loadModel('category');
     }
 
-    public function all()
-    {
-        $paginatedQuery = new PaginatedQueryAppController(
-            $this->post,
-            $this->generateUrl('blog')
-        );
 
-        $postById = $paginatedQuery->getItems();
+    public function inscription(){
+        $title = "INSCRIPTION";
 
-        $title = 'Blog';
         $this->render(
-            'post/all',
+            "user/register",
             [
                 "title" => $title,
-                "posts" => $postById,
-                "paginate" => $paginatedQuery->getNavHtml()
+                "categories" => $categories
+            ]
+        );
+
+    }
+
+    public function connection(){
+        $title = "CONNECTION";
+
+        $this->render(
+            "user/connexion",
+            [
+                "title" => $title,
+                "categories" => $categories
             ]
         );
     }
 
-    public function show(string $slug, int $id)
-    {
-
-        $post = $this->post->find($id);
-
-        if (!$post) {
-            throw new \Exception('Aucun article ne correspond à cet ID');
-        }
-
-        if ($post->getSlug() !== $slug) {
-            $url = $this->generateUrl('post', ['id' => $id, 'slug' => $post->getSlug()]);
-
-            http_response_code(301);
-            header('Location: ' . $url);
-            exit();
-        }
-
-        $categories = $this->category->allInId($post->getId());
-
-        $title = "article : " . $post->getName();
+    public function profil(){
+        $title = "PROFIL";
 
         $this->render(
-            "post/show",
+            "user/profil",
             [
                 "title" => $title,
-                "categories" => $categories,
-                "post" => $post
+                "categories" => $categories
             ]
         );
     }
+
+    
+
+
+
+
+
+
+
 }
