@@ -14,5 +14,8 @@ $app->getRouter($basePath)
     ->get('/shop', 'Beer#all', 'shop')
     ->get('/category/[*:slug]-[i:id]', 'Category#show', 'category')
     ->get('/article/[*:slug]-[i:id]', 'post#show', 'post')
+    ->get('/connexion', 'user#connexion', 'connexion')
+    ->get('/register', 'user#register', 'register')
+    ->get('/register', 'user#profil', 'profil')
     ->get('/test', 'Twig#index', 'test')
     ->run();
