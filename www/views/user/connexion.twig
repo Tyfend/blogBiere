@@ -1,21 +1,30 @@
 {% block stylesheets %}
-       <link rel="stylesheet" type="text/css" href="/assets/css/style.css" /> 
+       <link rel="stylesheet" type="text/css" href="/assets/css/style.css" />
+       <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css" integrity="sha384-oS3vJWv+0UjzBfQzYUhtDYW+Pj2yciDJxpsK1OYPAYjqT085Qq/1cq5FLXAZQ7Ay" crossorigin="anonymous"> 
 {% endblock stylesheets %}
 
 
 {% block content %}
-<body class="formulaire">
-    <section class="form">
-        <h1>connection</h1>
-        <form>
-            <input type="text" name="email" placeholder="Adresse email" required >
-            <input type="text" name="password" placeholder="Confirmation mot de passe" required >
-        </form>
-        <button>Envoyer</button>
-        <span>
-            <a href="/register">Pas encore inscrit?</a>
-            <a href="">Mot de passe oublié?</a>
-        </span>
-    </section>
-</body>
+<body class="identification">
+		<form class="form">
+			
+			<h2>Connexion</h2>
+			<div class="input">
+				<i class="fas fa-user"></i>
+				<input methode="GET" type="" name="mail" placeholder="email">
+			</div>
+			<div class="input">
+				<i class="fas fa-lock"></i>
+				<input methode="GET" type="" name="password" placeholder="mot de passe">
+			</div>
+			<div>
+				<button>connection</button>
+			</div>
+			<div class="onglets">
+				<a href="/register">S'inscrire</a>
+				<a href="">mdp oublié?</a>
+			</div>
+			
+		</form>
+	</body>
 {% endblock %}

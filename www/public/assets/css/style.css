@@ -40,41 +40,57 @@
 }
 
 /* CONNEXION+REGISTER FORM */
-.form{
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    background-color: rgba(0, 0, 0, 0.7);
-    width: 30%;
-    margin: 0 35%;
-    padding: 3%;
-}
-.formulaire {
+.identification {
 	background: url('https://picsum.photos/2000/1000/') no-repeat;
 	background-attachment: fixed;
 	width: 100%;
 } 
-.form input{
-    margin: 1%;
-    width: 100%;
-    padding: 8px;
-    background-color: rgba(0, 0, 0, 0.7);
-    color: white;
-    border: none;
-    font-size: 15px;
+.form {
+	width: 300px;
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	color: white;
+	display: flex;
+	flex-direction: column;
+	background-color: rgba(0, 0, 0, 0.8);
 }
-.form button{
-    padding: 5px;
-    margin: 3%;
-    width: 30%;
-    text-transform: uppercase;
+.connect > div, .inputdiv {
+	display: flex;
+	justify-content: flex-start;
+	border-top: 30px white solid;
 }
-.form a{
-    text-decoration: none;
-    color: white;
+.form * {
+	padding: 10px;
+	display: flex;
+	flex-direction: row;
+	justify-content: space-around;
 }
-.form h1{
-    color: white;
+.form button, h2{
+	text-transform: uppercase;
+
+}
+.form  a {
+	margin: 20px;
+	color: white;
+	font-size: 12px;
+	text-decoration: none;
+	text-transform: uppercase;
+
+}
+.form input {
+	overflow: hidden;
+	float: right;
+}	
+.input i {
+	float: left;
+	width: 20px;
+}
+.form input {
+	background: none;
+	outline: 0;
+	border: none;
+	border-bottom: 1px white solid;
 }
 
