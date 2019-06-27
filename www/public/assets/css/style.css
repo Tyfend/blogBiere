@@ -29,15 +29,12 @@
 .bieres {
     margin: 5% 0;
 }
-
 .bieres *{
     margin: 5%;
 }
-
 .bieres p{
     text-align: justify;
 }
-
 .price {
     font-weight: bold; 
 }
