@@ -3,24 +3,28 @@
 {% endblock stylesheets %}
 
 {% block content %}
-<section class="form">
-    <form>
-        <input type="text" name="lastName" placeholder="Nom" required >
-        <input type="text" name="firstName" placeholder="Prénom" required >
-        <input type="text" name="email" placeholder="Adresse email" required >
-        <input type="text" name="email" placeholder="Confirmation de l'email" required >
-        <input type="text" name="address" placeholder="Adresse" required >
-        <input type="text" name="zipCode" placeholder="Code postal" required >
-        <input type="text" name="city" placeholder="Ville" required >
-        <input type="text" name="country" placeholder="Pays" required >
-        <input type="text" name="phone" placeholder="N° téléphone" required >
-        <input type="text" name="lastName" placeholder="Nom" required >
-        <input type="text" name="password" placeholder="Confirmation mot de passe" required >
-        <input type="hidden" name="robot">
-    </form>
-    <button>Envoyer</button>
-    <span>
-        <a href="/">Retour</a>
-    </span>
-</section>
+<body class="formulaire">
+    <section class="form">
+        <h1>Inscription</h1>
+        <form>
+            <input type="text" name="lastName" placeholder="Nom" required >
+            <input type="text" name="firstName" placeholder="Prénom" required >
+            <input type="text" name="email" placeholder="Adresse email" required >
+            <input type="text" name="email" placeholder="Confirmation de l'email" required >
+            <input type="text" name="address" placeholder="Adresse" required >
+            <input type="text" name="zipCode" placeholder="Code postal" required >
+            <input type="text" name="city" placeholder="Ville" required >
+            <input type="text" name="country" placeholder="Pays" required >
+            <input type="text" name="phone" placeholder="N° téléphone" required >
+            <input type="text" name="lastName" placeholder="Nom" required >
+            <input type="text" name="password" placeholder="Confirmation mot de passe" required >
+            <input type="hidden" name="robot">
+        </form>
+        <button>Envoyer</button>
+        <span>
+            <a href="/">Retour</a>
+            <a href="/connexion">Déjà membre?</a>
+        </span>
+    </section>
+</body>
 {% endblock %}

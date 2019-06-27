@@ -46,18 +46,35 @@
     align-items: center;
     justify-content: center;
     background-color: rgba(0, 0, 0, 0.7);
-    width: 50%;
-    margin: 0 25%;
-    padding: 5%;
+    width: 30%;
+    margin: 0 35%;
+    padding: 3%;
 }
-
+.formulaire {
+	background: url('https://picsum.photos/2000/1000/') no-repeat;
+	background-attachment: fixed;
+	width: 100%;
+} 
 .form input{
     margin: 1%;
     width: 100%;
+    padding: 8px;
+    background-color: rgba(0, 0, 0, 0.7);
+    color: white;
+    border: none;
+    font-size: 15px;
 }
 .form button{
+    padding: 5px;
     margin: 3%;
-    width: 100%;
+    width: 30%;
     text-transform: uppercase;
+}
+.form a{
+    text-decoration: none;
+    color: white;
+}
+.form h1{
+    color: white;
 }
 
