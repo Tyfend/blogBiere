@@ -1,0 +1,17 @@
+{% extends "layout/default.twig" %}
+
+{% block title %}{{ title }}{% endblock %}
+
+
+{% block content %}
+<section class="form">
+    <form>
+        <input type="text" name="email" placeholder="Adresse email" required >
+        <input type="text" name="password" placeholder="Confirmation mot de passe" required >
+    </form>
+    <button>Envoyer</button>
+    <span>
+        <a href="">Mot de passe oublié?</a>
+    </span>
+</section>
+{% endblock %}

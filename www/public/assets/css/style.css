@@ -38,3 +38,26 @@
 .price {
     font-weight: bold; 
 }
+
+/* CONNEXION+REGISTER FORM */
+.form{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: rgba(0, 0, 0, 0.7);
+    width: 50%;
+    margin: 0 25%;
+    padding: 5%;
+}
+
+.form input{
+    margin: 1%;
+    width: 100%;
+}
+.form button{
+    margin: 3%;
+    width: 100%;
+    text-transform: uppercase;
+}
+
