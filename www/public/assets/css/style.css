@@ -77,20 +77,19 @@
 	font-size: 12px;
 	text-decoration: none;
 	text-transform: uppercase;
-
 }
 .form input {
 	overflow: hidden;
-	float: right;
+    float: right;
+    background: none;
+	outline: 0;
+	border: none;
+    border-bottom: 1px white solid;
+    color: white;
 }	
 .input i {
 	float: left;
 	width: 20px;
 }
-.form input {
-	background: none;
-	outline: 0;
-	border: none;
-	border-bottom: 1px white solid;
-}
+
 
